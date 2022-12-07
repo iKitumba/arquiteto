@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entre em contacto</title>
+    <style>
+      @font-face {
+        font-family: "SofiaPro";
+        src: url("/assets/fonts/SofiaProRegularAz.otf");
+      }
+
+      @font-face {
+        font-family: "Josefin";
+        src: url("/assets/fonts/JosefinSlab-VariableFont_wght.ttf");
+      }
+
+      /* This is a compiled file, you should be editing the file in the templates directory */
+      .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .pace-inactive {
+        display: none;
+      }
+
+      .pace .pace-progress {
+        background: #201a23;
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        right: 100%;
+        width: 100%;
+        height: 2px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        box-sizing: border-box;
+        font-family: "SofiaPro";
+      }
+
+      header {
+        height: 80px;
+        background: #af54cf;
+      }
+      body {
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 75px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+      .menu {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .menu li {
+        margin-left: 1rem;
+      }
+
+      .menu li a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 12px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .container {
+        margin: 54px 0;
+        padding: 0 75px;
+      }
+
+      .titleContainer {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .separator {
+        width: 8px;
+        height: 28px;
+        background: #af54cf;
+      }
+
+      .titleContainer h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: "Josefin";
+        line-height: 38px;
+        color: #201a23;
+        border-bottom: 4px solid #af54cf;
+      }
+
+      .content {
+        margin: 40px auto;
+        display: flex;
+      }
+
+      .content .form {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .form label {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .form label {
+        font-size: 20px;
+        color: #201a23;
+      }
+
+      .form label input {
+        width: 510px;
+        max-width: 100%;
+        height: 45px;
+        border: 1px solid #201a23;
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .form label textarea {
+        width: 510px;
+        max-width: 100%;
+        height: 140px;
+        border: 1px solid #201a23;
+        resize: none;
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .viewMore {
+        padding: 12px 30px;
+        border-radius: 30px;
+        align-self: flex-start;
+        font-family: "Josefin";
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: 2px;
+        border: none;
+        background: #af54cf;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      .illustration {
+        flex: 1;
+        object-fit: cover;
+      }
+
+      .footer {
+        height: 152px;
+        background: #201a23;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 72px;
+      }
+
+      .footerLeftSide {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .footerLeftSide strong {
+        font-size: 24px;
+        color: #ffffff;
+      }
+
+      .footerRightSide {
+        font-size: 24px;
+        color: #1a2c3b;
+      }
+
+      @media (max-width: 660px) {
+        .container,
+        .footer,
+        header {
+          padding: 24px;
+        }
+
+        .logo {
+          display: none;
+        }
+
+        .menu li {
+          margin-left: 0.4rem;
+        }
+
+        .menu li a {
+          padding: 0.4rem;
+          font-size: 1rem;
+        }
+
+        .content p {
+          font-size: 1rem;
+        }
+
+        .footerLeftSide strong {
+          display: none;
+        }
+
+        .footerRightSide {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 1080px) {
+        .container {
+          padding: 0 24px;
+        }
+
+        .content .form {
+          width: 600px;
+          max-width: 100%;
+        }
+
+        .illustration {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">
+        <img src="./assets/images/blueprint.svg" alt="" />
+      </a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="/#plants">Explorar</a></li>
+          <li><a href="/galeria.html">Galeria</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li><a href="/contactar.html">Contactar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="titleContainer">
+        <div class="separator"></div>
+        <h1>Entre em contacto</h1>
+      </div>
+      <div class="content">
+        <form action="" class="form" method="get">
+          <label>
+            <p>Nome</p>
+            <input type="text" />
+          </label>
+          <label>
+            <p>Email</p>
+            <input type="email" />
+          </label>
+          <label>
+            <p>Sua Mensagem</p>
+            <textarea class="message"></textarea>
+          </label>
+          <button class="viewMore">Enviar</button>
+        </form>
+        <img
+          src="assets/images/messageIlustration.svg"
+          alt="Illustration"
+          class="illustration"
+        />
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footerLeftSide">
+        <img src="./assets/images/Whatsapp.svg" alt="Whatsapp Icon" />
+        <img src="./assets/images/Facebook.svg" alt="Facebook Icon" />
+        <strong>Nome Completo</strong>
+      </div>
+      <span class="footerRightSide"> +244 999-999-999 </span>
+    </footer>
+    <script src="./scripts/pace.min.js"></script>
+  </body>
+</html>

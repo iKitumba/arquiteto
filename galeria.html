@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#AF54CF" />
+    <title>Galeria</title>
+    <style>
+      @font-face {
+        font-family: "SofiaPro";
+        src: url("/assets/fonts/SofiaProRegularAz.otf");
+      }
+
+      @font-face {
+        font-family: "Josefin";
+        src: url("/assets/fonts/JosefinSlab-VariableFont_wght.ttf");
+      }
+
+      /* This is a compiled file, you should be editing the file in the templates directory */
+      .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .pace-inactive {
+        display: none;
+      }
+
+      .pace .pace-progress {
+        background: #201a23;
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        right: 100%;
+        width: 100%;
+        height: 2px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        box-sizing: border-box;
+        font-family: "SofiaPro";
+      }
+
+      header {
+        height: 80px;
+        background: #af54cf;
+      }
+      body {
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 75px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+      .menu {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .menu li {
+        margin-left: 1rem;
+      }
+
+      .menu li a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 12px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .container {
+        margin: 54px 0;
+        padding: 0 75px;
+      }
+
+      .titleContainer {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .separator {
+        width: 8px;
+        height: 28px;
+        background: #af54cf;
+      }
+
+      .titleContainer h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: "Josefin";
+        line-height: 38px;
+        color: #201a23;
+        border-bottom: 4px solid #af54cf;
+      }
+
+      .content {
+        max-width: 638px;
+        margin: 40px auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .content .fotoContainer {
+        flex: 1 1 180px;
+        margin: 10px;
+      }
+      .content .fotoContainer img {
+        height: 180px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .footer {
+        height: 152px;
+        background: #201a23;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 72px;
+      }
+
+      .footerLeftSide {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .footerLeftSide strong {
+        font-size: 24px;
+        color: #ffffff;
+      }
+
+      .footerRightSide {
+        font-size: 24px;
+        color: #1a2c3b;
+      }
+
+      @media (max-width: 660px) {
+        .container,
+        .footer,
+        header {
+          padding: 24px;
+        }
+
+        .logo {
+          display: none;
+        }
+
+        .menu li {
+          margin-left: 0.4rem;
+        }
+
+        .menu li a {
+          padding: 0.4rem;
+          font-size: 1rem;
+        }
+
+        .content p {
+          font-size: 1rem;
+        }
+
+        .footerLeftSide strong {
+          display: none;
+        }
+
+        .footerRightSide {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">
+        <img src="./assets/images/blueprint.svg" alt="" />
+      </a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="/#plants">Explorar</a></li>
+          <li><a href="/galeria.html">Galeria</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li><a href="/contactar.html">Contactar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="titleContainer">
+        <div class="separator"></div>
+        <h1>Outros trabalhos feitos</h1>
+      </div>
+      <div class="content">
+        <div class="fotoContainer">
+          <img src="./assets/images/foto1.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto2.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto3.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto4.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto5.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto6.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto7.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto8.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto9.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto10.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto11.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto12.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto13.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto14.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto15.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto16.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto17.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto18.jpg" alt="" /><strong>2022</strong>
+        </div>
+        <div class="fotoContainer">
+          <img src="./assets/images/foto19.jpg" alt="" /><strong>2022</strong>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footerLeftSide">
+        <img src="./assets/images/Whatsapp.svg" alt="Whatsapp Icon" />
+        <img src="./assets/images/Facebook.svg" alt="Facebook Icon" />
+        <strong>Nome Completo</strong>
+      </div>
+      <span class="footerRightSide"> +244 999-999-999 </span>
+    </footer>
+    <script src="./scripts/pace.min.js"></script>
+  </body>
+</html>

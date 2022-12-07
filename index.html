@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#AF54CF" />
+    <title>Arquiteto</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="banner">
+        <section class="left">
+          <header>
+            <a href="/" class="logo">
+              <img src="./assets/images/blueprint.svg" alt="" />
+            </a>
+
+            <nav>
+              <ul class="menu">
+                <li><a href="/#plants">Explorar</a></li>
+                <li><a href="/galeria.html">Galeria</a></li>
+                <li><a href="/sobre.html">Sobre</a></li>
+                <li><a href="/contactar.html">Contactar</a></li>
+              </ul>
+            </nav>
+          </header>
+          <div class="leftContent">
+            <h1>
+              Projetamos <br />
+              Por completo <br />
+              <strong id="bannerTitleEm">a sua casa/empresa</strong>
+            </h1>
+            <p class="description">
+              Aqui vai uma descrição sobre o que você faz, o que te distingue da
+              maioria e se possível breves estatísticas no máximo algo de quarto
+              linhas
+            </p>
+            <div class="actions">
+              <a href="#plants" class="filled">Explorar</a>
+              <a href="#" class="outlined">Contactar</a>
+            </div>
+          </div>
+        </section>
+        <section class="right"></section>
+      </section>
+      <section class="plants" id="plants">
+        <section class="plantContainer">
+          <img
+            src="./assets/images/plantImg-1.jpg"
+            class="plantImage"
+            alt="Plant 1"
+          />
+
+          <div class="plantContent">
+            <h1>Nome Da Planta</h1>
+            <p>
+              Se estiver muito em cima da hora de falar, vá diretamente ao
+              último parágrafo deste capítulo. Se o tempo for, leia apenas o
+              resumo do texto em “Para ler em menos de um minuto”.
+            </p>
+            <a href="#" class="viewMore">Saber mais</a>
+          </div>
+        </section>
+        <section class="plantContainer">
+          <img
+            src="./assets/images/plantImg-2.jpg"
+            class="plantImage"
+            alt="Plant 2"
+          />
+
+          <div class="plantContent">
+            <h1>Nome Da Planta</h1>
+            <p>
+              Se estiver muito em cima da hora de falar, vá diretamente ao
+              último parágrafo deste capítulo. Se o tempo for, leia apenas o
+              resumo do texto em “Para ler em menos de um minuto”.
+            </p>
+            <a href="#" class="viewMore">Saber mais</a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footerLeftSide">
+        <img src="./assets/images/Whatsapp.svg" alt="Whatsapp Icon" />
+        <img src="./assets/images/Facebook.svg" alt="Facebook Icon" />
+        <strong>Nome Completo</strong>
+      </div>
+      <span class="footerRightSide"> +244 999-999-999 </span>
+    </footer>
+
+    <script>
+      function typeWriter(elemento) {
+        const textoArray = elemento.innerHTML.split("");
+        elemento.innerHTML = "";
+        textoArray.forEach((letra, i) => {
+          setTimeout(() => {
+            elemento.innerHTML += letra;
+          }, 75 * i);
+        });
+      }
+
+      const titulo = document.querySelector("#bannerTitleEm");
+      setInterval(() => typeWriter(titulo), 5000);
+    </script>
+    <script src="./scripts/pace.min.js"></script>
+  </body>
+</html>
