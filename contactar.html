@@ -404,7 +404,7 @@
       const btnMobile = document.querySelector("#btnMobile");
 
       function toggleMenu(event) {
-        if (event.type === "touchstart") event.preventDefault();
+        // if (event.type === "touchstart") event.preventDefault();
         const nav = document.querySelector("nav");
         nav.classList.toggle("active");
         const active = nav.classList.contains("active");
@@ -418,7 +418,7 @@
       }
 
       btnMobile.addEventListener("click", toggleMenu);
-      btnMobile.addEventListener("touchstart", toggleMenu);
+      // btnMobile.addEventListener("touchstart", toggleMenu);
     </script>
   </body>
 </html>
