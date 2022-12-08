@@ -96,6 +96,11 @@
         padding: 12px;
         font-size: 20px;
         font-weight: 600;
+        transition: 0.2s;
+      }
+
+      #btnMobile {
+        display: none;
       }
 
       .container {
@@ -166,18 +171,91 @@
         header {
           padding: 24px;
         }
+        header {
+          justify-content: space-between;
+          align-items: center;
+        }
 
-        .logo {
+        /* .logo {
           display: none;
+        } */
+
+        #btnMobile {
+          display: flex;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+          border: none;
+          background: none;
+          color: #ffffff;
+          gap: 0.5rem;
+        }
+
+        #hamburger {
+          display: block;
+          width: 20px;
+          border-top: 2px solid;
+        }
+
+        #hamburger::after,
+        #hamburger::before {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 2px;
+          background: currentColor;
+          margin-top: 5px;
+          transition: 0.3s;
+          position: relative;
+        }
+
+        .menu {
+          display: block;
+          position: absolute;
+          width: 100%;
+          top: 75px;
+          right: 0;
+          background: #1f1424;
+          height: 0;
+          z-index: 111;
+          transition: 0.6s;
+          visibility: hidden;
+          overflow-y: hidden;
+        }
+
+        nav.active .menu {
+          display: block;
+          height: calc(100vh - 75px);
+          visibility: visible;
+          overflow-y: auto;
+        }
+
+        nav.active #hamburger {
+          border-top-color: transparent;
+        }
+
+        nav.active #hamburger::before {
+          transform: rotate(135deg);
+        }
+
+        nav.active #hamburger::after {
+          transform: rotate(-135deg);
+          top: -7px;
+        }
+
+        .menu li a {
+          display: block;
+          padding: 1rem;
+          margin: 0 1rem;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .menu li a:hover {
+          background: #ae54cf54;
+          /* color: #201a23; */
         }
 
         .menu li {
           margin-left: 0.4rem;
-        }
-
-        .menu li a {
-          padding: 0.4rem;
-          font-size: 1rem;
         }
 
         .content p {
@@ -201,7 +279,17 @@
       </a>
 
       <nav>
-        <ul class="menu">
+        <button
+          id="btnMobile"
+          aria-label="Abrir Menu"
+          aria-haspopup="true"
+          aria-controls="menu"
+          aria-expanded="false"
+        >
+          Menu
+          <span id="hamburger"></span>
+        </button>
+        <ul class="menu" id="menu" role="menu">
           <li><a href="./#plants">Explorar</a></li>
           <li><a href="./galeria.html">Galeria</a></li>
           <li><a href="./sobre.html">Sobre</a></li>
@@ -243,5 +331,25 @@
       <span class="footerRightSide"> +244 999-999-999 </span>
     </footer>
     <script src="./scripts/pace.min.js"></script>
+    <script>
+      const btnMobile = document.querySelector("#btnMobile");
+
+      function toggleMenu(event) {
+        if (event.type === "touchstart") event.preventDefault();
+        const nav = document.querySelector("nav");
+        nav.classList.toggle("active");
+        const active = nav.classList.contains("active");
+
+        event.currentTarget.setAttribute("aria-expanded", active);
+        if (active) {
+          event.currentTarget.setAttribute("aria-label", "Fechar Menu");
+        } else {
+          event.currentTarget.setAttribute("aria-label", "Abrir Menu");
+        }
+      }
+
+      btnMobile.addEventListener("click", toggleMenu);
+      btnMobile.addEventListener("touchstart", toggleMenu);
+    </script>
   </body>
 </html>

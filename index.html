@@ -23,7 +23,17 @@
             </a>
 
             <nav>
-              <ul class="menu">
+              <button
+                id="btnMobile"
+                aria-label="Abrir Menu"
+                aria-haspopup="true"
+                aria-controls="menu"
+                aria-expanded="false"
+              >
+                Menu
+                <span id="hamburger"></span>
+              </button>
+              <ul class="menu" id="menu" role="menu">
                 <li><a href="./#plants">Explorar</a></li>
                 <li><a href="./galeria.html">Galeria</a></li>
                 <li><a href="./sobre.html">Sobre</a></li>
@@ -110,6 +120,26 @@
 
       const titulo = document.querySelector("#bannerTitleEm");
       setInterval(() => typeWriter(titulo), 5000);
+    </script>
+    <script>
+      const btnMobile = document.querySelector("#btnMobile");
+
+      function toggleMenu(event) {
+        if (event.type === "touchstart") event.preventDefault();
+        const nav = document.querySelector("nav");
+        nav.classList.toggle("active");
+        const active = nav.classList.contains("active");
+
+        event.currentTarget.setAttribute("aria-expanded", active);
+        if (active) {
+          event.currentTarget.setAttribute("aria-label", "Fechar Menu");
+        } else {
+          event.currentTarget.setAttribute("aria-label", "Abrir Menu");
+        }
+      }
+
+      btnMobile.addEventListener("click", toggleMenu);
+      btnMobile.addEventListener("touchstart", toggleMenu);
     </script>
     <script src="./scripts/pace.min.js"></script>
   </body>
